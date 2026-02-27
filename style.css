@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+
+    /* Fundo cinza base */
+    color: #0f172a;
+    /* Texto escuro para leitura perfeita */
+}
+
+/* Efeito de Vidro (Glassmorphism) para Tema Claro */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+}
+
+.glass-pill {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Base styles for scroll reveals */
+.scroll-reveal {
+    opacity: 0;
+    transition: all 1000ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Default (bottom up) */
+.scroll-reveal:not(.reveal-left):not(.reveal-right) {
+    transform: translateY(4rem);
+}
+
+/* Começa da esquerda (fora da tela) */
+.scroll-reveal.reveal-left {
+    transform: translateX(-10vw) scale(0.9);
+}
+
+/* Começa da direita (fora da tela) */
+.scroll-reveal.reveal-right {
+    transform: translateX(10vw) scale(0.9);
+}
+
+/* Base Visible state para todos */
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translate(0, 0) scale(1) !important;
+}
